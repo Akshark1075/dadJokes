@@ -1,0 +1,195 @@
+.JokeList{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 80%;
+   
+
+  }
+.JokeList-Header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   height: 100%;
+ 
+    width:30%;
+    background-color: #9575CD;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.3), inset 0 0 25px #7e57c2;
+    z-index:2;
+}
+.JokeList-title{
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 0.6rem;
+    color: white;
+    margin: 2rem;
+}
+.JokeList-title span{
+    font-weight: 700;
+    letter-spacing: 0;
+}
+.JokeList-Jokes{
+    display: flex;
+    flex-direction: column;
+   
+    width:70%;
+    box-sizing: border-box;
+    padding: 1rem;
+    height: 90%;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: azure;
+}
+.laughing{
+    border-radius: 50%;
+    box-shadow: 0 19px 19px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.1);
+    font-size: 15em;
+    
+}
+.laughing:hover{
+    animation-name: laugh;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.JokeList-Joke{
+    display: flex;
+    border-bottom:2px solid #eeeeee;
+    font-weight: 400;
+    padding: 1rem;
+    width: 100%;
+}
+.Joke-buttons{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-right: 1rem;
+    width:15%;
+}
+.Joke-Text{
+    width: 75%;
+    font-size: 1.2rem;
+}
+.Joke-rating{
+    width: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align:center;
+    font-size: 20px;
+    font-weight: 300;
+    
+    box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.1);
+
+}
+.JokeList-loading{
+color: white;
+
+animation: loadingEmoji 2s linear infinite;
+}
+.JokeList-getmore{
+    font-size: 1.5rem;
+    width: 50%;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    color:white;
+  background: linear-gradient(
+    135deg,
+    rgba(179,229,252,1) 0%,
+    rgba(179,229,252,1) 50%,
+    rgba(240,98,146,1) 50%,
+    rgba(240,98,146,1) 100%
+  );
+  border: none;
+  outline: none;
+  word-spacing: 0.2rem;
+  cursor: pointer;
+  margin: 2rem;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.1);
+  transition: 0.8s cubic-bezier(0.2,1,0.2,1);
+}
+.JokeList-getmore:hover{
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    transform: translateY(-2px);
+}
+.fa-arrow-up,.fa-arrow-down{
+    font-size: 1.5em;
+    margin:10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.fa-arrow-up:hover{
+animation-name: move-up;
+animation-timing-function: ease-out;
+animation-duration: 0.7s;
+color: green;
+}
+.fa-arrow-down:hover{
+    animation-name: move-down;
+    animation-timing-function: ease-out;
+    animation-duration: 0.7s;
+    color: red;
+    }
+@keyframes move-up{
+    0%,50%,100%{
+        transform: translateY(0);
+    }
+    25%,75%{
+        transform: translateY(-3px);
+    }
+}
+@keyframes move-down{
+    0%,50%,100%{
+        transform: translateY(0);
+    }
+    25%,75%{
+        transform: translateY(+3px);
+    }
+}
+.Joke-smiley{
+font-size: 3rem;
+border-radius: 50%;
+margin-left: auto;
+margin-right: 1rem;
+box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.1);
+}
+.Joke-smiley:hover{
+    animation-name: spin;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+}
+@keyframes spin{
+    0%{transform: rotate(0deg);}
+    30%{transform: rotate(20deg);}
+    60%{transform: rotate(0deg);}
+    80%{transform: rotate(10deg);}
+    100%{transform: rotate(0deg);}
+}
+@keyframes laugh{
+    0%{transform: rotate(0deg);}
+    30%{transform: rotate(20deg);}
+    60%{transform: rotate(0deg);}
+    80%{transform: rotate(-20deg);}
+    100%{transform: rotate(0deg);}
+}
+@keyframes loadingEmoji{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}
+
+.JokeList-Jokes::-webkit-scrollbar {
+    width:0.7rem;
+    
+  }
+   
+  .JokeList-Jokes::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  .JokeList-Jokes::-webkit-scrollbar-thumb {
+    background-color: #9575CD; 
+      outline: 1px solid rgb(3, 3, 3);
+  } 
